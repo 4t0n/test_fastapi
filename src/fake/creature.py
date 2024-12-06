@@ -4,7 +4,7 @@ from model.creature import Creature
 _creatures = [
     Creature(
         name="Yeti",
-        aka="AbominaЫe Snowman",
+        aka="Abominable Snowman",
         country="CN",
         area="Himalayas",
         description="Hirsute Himalayan",
@@ -37,17 +37,17 @@ def create(creature: Creature) -> Creature:
     return creature
 
 
-def modify(creature: Creature) -> Creature:
+def modify(name: str, creature: Creature) -> Creature:
     """Частичное изменение записи существа"""
     return creature
 
 
-def replace(creature: Creature) -> Creature:
+def replace(name: str, creature: Creature) -> Creature:
     """Полная замена записи существа"""
     return creature
 
 
-def delete(name: str):
+def delete(name: str) -> bool | None:
     """Удаление записи существа; возврат значения None,
     если запись существовала"""
     return None

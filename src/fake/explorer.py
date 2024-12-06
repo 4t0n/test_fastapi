@@ -30,11 +30,17 @@ def create(explorer: Explorer) -> Explorer:
     return explorer
 
 
-def modify(explorer: Explorer) -> Explorer:
+def modify(name: str, explorer: Explorer) -> Explorer:
     """Частичное изменение записи исследователя"""
     return explorer
 
 
-def replace(explorer: Explorer) -> Explorer:
+def replace(name: str, explorer: Explorer) -> Explorer:
     """Полная замена записи исследователя"""
     return explorer
+
+
+def delete(name: str) -> bool | None:
+    """Удаление записи существа; возврат значения None,
+    если запись существовала"""
+    return None
