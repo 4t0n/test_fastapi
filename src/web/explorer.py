@@ -12,7 +12,7 @@ def get_all() -> list[Explorer]:
 
 
 @router.get("/{name}")
-def get_one(name) -> Explorer | None:
+def get_one(name: str) -> Explorer | None:
     return service.get_one(name)
 
 
@@ -22,15 +22,15 @@ def create(explorer: Explorer) -> Explorer:
 
 
 @router.patch("/")
-def modify(explorer: Explorer) -> Explorer:
-    return service.modify(explorer)
+def modify(name: str, explorer: Explorer) -> Explorer:
+    return service.modify(name, explorer)
 
 
 @router.put("/")
-def replace(explorer: Explorer) -> Explorer:
-    return service.replace(explorer)
+def replace(name: str, explorer: Explorer) -> Explorer:
+    return service.replace(name, explorer)
 
 
 @router.delete("/{name}")
 def delete(name: str):
-    return None
+    return service.delete(name)

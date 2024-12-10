@@ -22,13 +22,13 @@ def create(creature: Creature) -> Creature:
 
 
 @router.patch("/")
-def modify(creature: Creature) -> Creature:
-    return service.modify(creature)
+def modify(name: str, creature: Creature) -> Creature:
+    return service.modify(name, creature)
 
 
 @router.put("/")
-def replace(creature: Creature) -> Creature:
-    return service.replace(creature)
+def replace(name: str, creature: Creature) -> Creature:
+    return service.replace(name, creature)
 
 
 @router.delete("/{name}")
