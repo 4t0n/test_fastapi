@@ -14,13 +14,9 @@ def create(creature: Creature) -> Creature:
     return data.create(creature)
 
 
-def replace(creature: Creature) -> Creature:
-    return data.replace(creature)
+def modify(name: str, creature: Creature) -> Creature | None:
+    return data.modify(name, creature)
 
 
-def modify(creature: Creature) -> Creature:
-    return data.modify(creature)
-
-
-def delete(creature: Creature) -> bool | None:
-    return data.delete(creature)
+def delete(name: str) -> bool | None:
+    return data.delete(name)

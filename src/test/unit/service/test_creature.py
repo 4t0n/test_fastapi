@@ -1,3 +1,6 @@
+import pytest
+from data import creature
+from errors import Missing
 from model.creature import Creature
 from service import creature as code
 
@@ -22,5 +25,5 @@ def test_get_exists():
 
 
 def test_get_missing():
-    resp = code.get_one("boxturtle")
-    assert resp is None
+    with pytest.raises(Missing):
+        creature.get_one("boxturtle")
